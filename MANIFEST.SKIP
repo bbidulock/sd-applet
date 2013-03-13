@@ -1,5 +1,6 @@
 CVS/.*
 \.git/.*
+\.gitignore
 \.bs$
 \.c$
 \.o$
