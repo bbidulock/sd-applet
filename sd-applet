@@ -2112,7 +2112,8 @@ sd-applet
 
 B<sd-applet> is a small perl Gtk2 application that installs an icon
 into the system tray and provides the ability to manage systemd unit
-files and active units using a graphical interface.
+files and active units using a graphical interface.  It also provides
+for desktop notifications when unit files or the status of units changes.
 
 =head1 SEE ALSO
 
@@ -2120,7 +2121,7 @@ systemd(8)
 
 =head1 LICENSE
 
-DWTW
+perl
 
 =head1 AUTHOR
 

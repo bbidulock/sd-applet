@@ -5,5 +5,4 @@ MANIFEST.SKIP
 sd-applet
 README
 TODO
-PKGBUILD
 sd-applet.desktop
