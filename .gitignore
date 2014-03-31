@@ -9,3 +9,4 @@ sd-applet-*.tar.gz
 *.log
 blib/
 pm_to_blib
+_install
