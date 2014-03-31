@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=Systemd Applet
+GenericName=System Applet
+Icon=applications-system
+Exec=sd-applet
+Terminal=false
+Categories=TrayIcon;
+StartupNotify=true
+NotShowIn=GNOME;KDE;XFCE;LXDE;
+X-GNOME-Autostart-enabled=true

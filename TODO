@@ -1,0 +1,5 @@
+
+- should be able to link to documentation in documentation field of unit files
+- the width of property windows is a little funny
+- notifications are not complete and notifications should be ablt to be
+  posted when the status of units change

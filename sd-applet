@@ -40,7 +40,7 @@ use base qw(Net::DBus::RemoteObject);
 use strict;
 
 sub new {
-	my $srv = Net::DBus::GLib->find->get_service('org.freedesktop.systemd1');
+	my $srv = Net::DBus::GLib->system->get_service('org.freedesktop.systemd1');
 	my $self = bless $srv->get_object('/org/freedesktop/systemd1'), shift;
 	my $appl = shift;
 	$self->{properties} = $self->GetAll('org.freedesktop.systemd1.Manager');
@@ -2007,6 +2007,7 @@ sub message_received {
 	} else {
 		print STDERR "Bad command value $command\n";
 	}
+	Gtk2::Gdk->notify_startup_complete_with_id($message->get_startup_id);
 	return 'ok';
 }
 

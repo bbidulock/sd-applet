@@ -7,3 +7,5 @@ sd-applet-*-any.pkg.tar.xz
 sd-applet-*.src.tar.gz
 sd-applet-*.tar.gz
 *.log
+blib/
+pm_to_blib
