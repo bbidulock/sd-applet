@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=Systemd Unit Browser
+GenericName=Systemd Units
+Icon=applications-system
+Exec=sd-units
+Terminal=false
+Categories=System;
+StartupNotify=true
+NotShowIn=GNOME;KDE;XFCE;LXDE;

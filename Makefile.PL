@@ -35,6 +35,10 @@ install:: install_desktop
 install_desktop:
 	install -Dm644 sd-applet.desktop "\$(DESTDIR)/etc/xdg/autostart/sd-applet.desktop"
 	install -Dm644 sd-applet.desktop "\$(DESTDIR)/usr/share/applications/sd-applet.desktop"
+	ln -sf sd-applet "\$(DESTDIR)\$(INSTALLSITESCRIPT)/sd-files"
+	install -Dm644 sd-files.desktop "\$(DESTDIR)/usr/share/applications/sd-files.desktop"
+	ln -sf sd-applet "\$(DESTDIR)\$(INSTALLSITESCRIPT)/sd-units"
+	install -Dm644 sd-units.desktop "\$(DESTDIR)/usr/share/applications/sd-units.desktop"
 
 MAKE_FRAG
 }

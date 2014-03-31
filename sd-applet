@@ -1969,8 +1969,8 @@ sub new {
 		'sd-units'  => &COMMAND_UNITS,
 		'sd-files'  => &COMMAND_FILES,
 	), shift;
+	my $cmd = $0; $cmd =~ s/^.*\///;
 	if ($self->is_running) {
-		my $cmd = $0; $cmd =~ s/^.*\///;
 		$self->send_message_by_name($cmd=>text=>join('|',$0,@ARGV));
 		print STDERR "Another instance of $cmd is already running.\n";
 		exit(0);
@@ -1988,18 +1988,24 @@ sub new {
 	my $mngr = $self->{mngr} = Sd::Manager->new($self);
 	$self->ListUnitFiles;
 	$self->ListUnits;
+	if ($cmd eq 'sd-units') {
+		my $win = get Sd::UnitWindow;
+	} elsif ($cmd eq 'sd-files') {
+		my $win = get Sd::FileWindow;
+	} elsif ($cmd eq 'sd-applet') {
+	}
 	return $self;
 }
 
 sub message_received {
 	my ($self,$command,$message,$time) = @_;
-	if ($command == &COMMAND_UNITS) {
+	if ($command eq 'sd-units' or $command == &COMMAND_UNITS) {
 		my $win = get Sd::UnitWindow;
 		$win->set_screen($message->get_screen);
-	} elsif ($command == &COMMAND_FILES) {
+	} elsif ($command eq 'sd-files' or $command == &COMMAND_FILES) {
 		my $win = get Sd::FileWindow;
 		$win->set_screen($message->get_screen);
-	} elsif ($command == &COMMAND_APPLET) {
+	} elsif ($command eq 'sd-applet' or $command == &COMMAND_APPLET) {
 		my $text = $message->get_text;
 		my @args = split(/\|/,$text);
 		my $prog = shift @args;
@@ -2106,7 +2112,7 @@ __END__
 
 =head1 SYNOPSIS
 
-sd-applet
+sd-applet, sd-files, sd-units
 
 =head1 DESCRIPTION
 
@@ -2114,6 +2120,10 @@ B<sd-applet> is a small perl Gtk2 application that installs an icon
 into the system tray and provides the ability to manage systemd unit
 files and active units using a graphical interface.  It also provides
 for desktop notifications when unit files or the status of units changes.
+
+When invoked as B<sd-files>, B<sd-applet> pops up the files dialog.
+
+When invoked as B<sd-units>, B<sd-applet> pops up the units dialog.
 
 =head1 SEE ALSO
 

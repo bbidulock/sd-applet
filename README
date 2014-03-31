@@ -3,13 +3,17 @@ SD-APPLET(1)          User Contributed Perl Documentation         SD-APPLET(1)
 
 
 SYNOPSIS
-       sd-applet
+       sd-applet, sd-files, sd-units
 
 DESCRIPTION
        sd-applet is a small perl Gtk2 application that installs an icon into
        the system tray and provides the ability to manage systemd unit files
        and active units using a graphical interface.  It also provides for
        desktop notifications when unit files or the status of units changes.
+
+       When invoked as sd-files, sd-applet pops up the files dialog.
+
+       When invoked as sd-units, sd-applet pops up the units dialog.
 
 SEE ALSO
        systemd(8)
@@ -22,4 +26,4 @@ AUTHOR
 
 
 
-perl v5.18.2                      2014-03-30                      SD-APPLET(1)
+perl v5.18.2                      2014-03-31                      SD-APPLET(1)

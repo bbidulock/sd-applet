@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=Systemd File Browser
+GenericName=Systemd Files
+Icon=applications-system
+Exec=sd-files
+Terminal=false
+Categories=System;
+StartupNotify=true
+NotShowIn=GNOME;KDE;XFCE;LXDE;
