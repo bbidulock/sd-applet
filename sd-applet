@@ -1230,11 +1230,12 @@ sub new {
 sub del {
 	my $self = shift;
 	my $store = get Sd::UnitModel;
-	my $iter = delete $self->{iter};
-	my $id = $self->{id};
-	$store->{count}--;
-	delete $store->{objects}{$id};
-	$store->remove($iter);
+	if (my $iter = delete $self->{iter}) {
+		my $id = $self->{id};
+		$store->{count}--;
+		delete $store->{objects}{$id};
+		$store->remove($iter);
+	}
 }
 
 # -----------------------------------------------------------
