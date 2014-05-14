@@ -6,6 +6,6 @@ GenericName=Systemd Files
 Icon=applications-system
 Exec=sd-files
 Terminal=false
-Categories=System;
+Categories=System;Monitor;GTK;
 StartupNotify=true
 NotShowIn=GNOME;KDE;XFCE;LXDE;

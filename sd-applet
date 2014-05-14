@@ -7,6 +7,9 @@ use Gtk2::Unique;
 use Net::DBus;
 use Net::DBus::GLib;
 
+my @files = Gtk2::Rc->get_default_files();
+Gtk2::Rc->set_default_files(@files, "$ENV{HOME}/.gtkrc-2.0.xde");
+
 Gtk2->init;
 Gtk2::Notify->init("sd-applet");
 
@@ -2143,6 +2146,10 @@ Gtk2->main;
 
 __END__
 
+=head1 NAME
+
+sd-applet - a systemd system tray applet
+
 =head1 SYNOPSIS
 
 sd-applet, sd-files, sd-units
@@ -2152,7 +2159,7 @@ sd-applet, sd-files, sd-units
 B<sd-applet> is a small perl Gtk2 application that installs an icon
 into the system tray and provides the ability to manage systemd unit
 files and active units using a graphical interface.  It also provides
-for desktop notifications when unit files or the status of units changes.
+for desktop notifications when unit files or the status of units change.
 
 When invoked as B<sd-files>, B<sd-applet> pops up the files dialog.
 
@@ -2160,11 +2167,11 @@ When invoked as B<sd-units>, B<sd-applet> pops up the units dialog.
 
 =head1 SEE ALSO
 
-systemd(8)
+L<systemd(8)>
 
 =head1 LICENSE
 
-perl
+perl/GPL
 
 =head1 AUTHOR
 

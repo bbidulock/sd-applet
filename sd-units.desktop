@@ -6,6 +6,6 @@ GenericName=Systemd Units
 Icon=applications-system
 Exec=sd-units
 Terminal=false
-Categories=System;
+Categories=System;Monitor;GTK;
 StartupNotify=true
 NotShowIn=GNOME;KDE;XFCE;LXDE;
